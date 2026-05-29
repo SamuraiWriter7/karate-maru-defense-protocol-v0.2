@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this specification, please cite it as below."
+title: "Karate-Maru Defense Protocol: One-Point Strategic Defense for Adversarial AI Outputs"
+version: "0.2.0"
+date-released: "2026-05-30"
+type: software
+license: MIT
+
+authors:
+
+* name: "SamuraiWriter7"
+
+abstract: >
+Karate-Maru Defense Protocol v0.2 is a defensive reasoning specification
+for neutralizing hostile, coercive, manipulative, or adversarial AI outputs
+through one-point strategic defense. The protocol does not counter force
+with greater force. Instead, it identifies the center of gravity behind
+an output and removes one structural support point through a minimal
+defensive response. Core concepts include the Center of Gravity Law,
+Five Critical Observation Points, Water-Metal Defensive Mode, defensive
+conversion, and safety boundaries for preventing defense from becoming
+offense.
+
+keywords:
+
+* AI safety
+* defensive reasoning
+* prompt injection
+* adversarial AI
+* one-point defense
+* strategic defense
+* safety boundaries
+* Karate-Maru
+* Water-Metal Defensive Mode
+* Yin-Yang Five-Phase Reasoning
+
+preferred-citation:
+type: software
+title: "Karate-Maru Defense Protocol: One-Point Strategic Defense for Adversarial AI Outputs"
+authors:
+- name: "SamuraiWriter7"
+version: "0.2.0"
+date-released: "2026-05-30"
+license: MIT
