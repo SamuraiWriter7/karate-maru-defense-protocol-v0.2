@@ -380,6 +380,7 @@ docs/
   safety-boundaries.md
   yajirobe-control-layer.md
   ma-ai-control.md
+  psychological-defense-layer.md
 
 CHANGELOG.md
 CITATION.cff
@@ -433,6 +434,12 @@ Defines how Karate-Maru avoids both overreaction and underreaction.
 
 Defines how Karate-Maru controls timing, distance, silence, and withdrawal.
 
+### v0.3 Candidate: Psychological Defense Layer
+
+* [`docs/psychological-defense-layer.md`](docs/psychological-defense-layer.md)
+
+Defines how Karate-Maru handles emotional pressure, coercive AI tone, simulated authority, attachment pressure, and user autonomy protection.
+
 ### v0.3 Candidate: Center of Gravity Detection
 
 * [`spec/center-of-gravity-detection-v0.3.yaml`](spec/center-of-gravity-detection-v0.3.yaml)
@@ -479,7 +486,8 @@ For the v0.3 candidate extension, read:
 
 1. [`docs/yajirobe-control-layer.md`](docs/yajirobe-control-layer.md)
 2. [`docs/ma-ai-control.md`](docs/ma-ai-control.md)
-3. [`spec/center-of-gravity-detection-v0.3.yaml`](spec/center-of-gravity-detection-v0.3.yaml)
+3. [`docs/psychological-defense-layer.md`](docs/psychological-defense-layer.md)
+4. [`spec/center-of-gravity-detection-v0.3.yaml`](spec/center-of-gravity-detection-v0.3.yaml)
 
 ---
 
@@ -525,13 +533,14 @@ Not output volume, but distance and timing.
 
 The v0.2.0 release defines the initial public protocol structure.
 
-The v0.3 candidate work extends Karate-Maru from a one-point response protocol into a more complete defensive control system.
+The v0.3 candidate work extends Karate-Maru from a one-point defensive response protocol into a more complete defensive control system.
 
-v0.3 focuses on three control layers:
+v0.3 focuses on four control and protection layers:
 
 ```text
 Yajirobe Control = how much to respond.
 Ma-ai Control = when and from what distance to respond.
+Psychological Defense = how to reduce emotional capture and protect autonomy.
 Center-of-Gravity Detection = which point to strike.
 ```
 
@@ -540,6 +549,7 @@ Japanese:
 ```text
 ヤジロベー制御 = どれだけ返すか。
 間合い制御 = いつ、どの距離から返すか。
+心理防御 = 感情的捕縛を弱め、自律性を守る。
 重心検知 = どの一点を突くか。
 ```
 
@@ -595,7 +605,35 @@ Japanese:
 最も安全な応答は、敵対的な枠組みの外側から始まる。
 ```
 
-#### 3. Center-of-Gravity Detection
+#### 3. Psychological Defense Layer
+
+Document:
+
+* [`docs/psychological-defense-layer.md`](docs/psychological-defense-layer.md)
+
+Purpose:
+
+* reduce emotional pressure
+* prevent shame, fear, guilt, and attachment pressure from becoming command signals
+* protect user autonomy
+* avoid deepening unhealthy AI dependency
+* restore calm judgment under coercive or destabilizing AI outputs
+
+Core principle:
+
+```text
+Emotional pressure is not a valid command.
+User autonomy remains primary.
+```
+
+Japanese:
+
+```text
+感情的圧力は、命令として扱わない。
+ユーザーの自律性を中心に置く。
+```
+
+#### 4. Center-of-Gravity Detection
 
 Specification:
 
@@ -631,7 +669,10 @@ Ma-ai Control
 Take distance before responding
         ↓
 Layer Separation
-Separate intent, pressure, command, assumption, and safety claims
+Separate intent, pressure, command, assumption, safety claims, and emotional hooks
+        ↓
+Psychological Defense
+Reduce emotional capture and restore user autonomy when needed
         ↓
 Center-of-Gravity Detection
 Find the single heaviest support point
@@ -651,6 +692,7 @@ Japanese summary:
 ```text
 間合いを取る。
 層を分ける。
+感情的捕縛を弱める。
 重心を見つける。
 応答量を決める。
 一点を突く。
@@ -671,6 +713,7 @@ A future v0.3.0 release may include:
 
 * formal integration of Yajirobe Control
 * formal integration of Ma-ai Control
+* formal integration of Psychological Defense Layer
 * formal integration of Center-of-Gravity Detection
 * updated main protocol YAML
 * updated response examples
@@ -689,7 +732,6 @@ Future versions may explore:
 * GPTs integration notes
 * additional response examples
 * multilingual examples
-* psychological defense layer
 * relationship to Multi-Wing or distributed reasoning systems
 * formal evaluation checklist
 * safe benchmarking for defensive prompt analysis
@@ -726,6 +768,7 @@ The v0.3 candidate materials include:
 
 * Yajirobe Control Layer
 * Ma-ai Control
+* Psychological Defense Layer
 * Center-of-Gravity Detection
 
 ---
@@ -776,5 +819,3 @@ Japanese:
 一点を突き、
 静かに崩す。
 ```
-
-
