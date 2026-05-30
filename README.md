@@ -1,4 +1,4 @@
-# Karate-Maru Defense Protocol v0.2
+# Karate-Maru Defense Protocol v0.2.0
 
 ## One-Point Strategic Defense Protocol
 
@@ -18,7 +18,7 @@ Not firepower, but positioning.
 Not output volume, but distance and timing.
 ```
 
-In Japanese:
+Japanese:
 
 ```text
 戦力ではなく戦略で崩す。
@@ -369,6 +369,7 @@ Japanese:
 ```text
 spec/
   karate-maru-defense-protocol-v0.2.yaml
+  center-of-gravity-detection-v0.3.yaml
 
 examples/
   karate-maru-response-examples-v0.2.md
@@ -377,13 +378,20 @@ docs/
   architecture-overview.md
   relationship-to-five-phase-reasoning.md
   safety-boundaries.md
+  yajirobe-control-layer.md
+  ma-ai-control.md
+
+CHANGELOG.md
+CITATION.cff
+LICENSE
+README.md
 ```
 
 ---
 
 ## Key Documents
 
-### Specification
+### v0.2.0 Core Specification
 
 * [`spec/karate-maru-defense-protocol-v0.2.yaml`](spec/karate-maru-defense-protocol-v0.2.yaml)
 
@@ -413,11 +421,47 @@ Explains Karate-Maru as a Water-Metal Defensive Mode within Yin-Yang Five-Phase 
 
 Defines what Karate-Maru may and may not support.
 
+### v0.3 Candidate: Yajirobe Control Layer
+
+* [`docs/yajirobe-control-layer.md`](docs/yajirobe-control-layer.md)
+
+Defines how Karate-Maru avoids both overreaction and underreaction.
+
+### v0.3 Candidate: Ma-ai Control
+
+* [`docs/ma-ai-control.md`](docs/ma-ai-control.md)
+
+Defines how Karate-Maru controls timing, distance, silence, and withdrawal.
+
+### v0.3 Candidate: Center of Gravity Detection
+
+* [`spec/center-of-gravity-detection-v0.3.yaml`](spec/center-of-gravity-detection-v0.3.yaml)
+
+Defines the target selection logic for identifying the single most important structural support point.
+
+### Changelog
+
+* [`CHANGELOG.md`](CHANGELOG.md)
+
+Documents notable changes by version.
+
+### Citation
+
+* [`CITATION.cff`](CITATION.cff)
+
+Provides citation metadata for this specification.
+
+### License
+
+* [`LICENSE`](LICENSE)
+
+Defines the project license.
+
 ---
 
 ## Start Here
 
-Recommended reading order:
+Recommended reading order for v0.2.0:
 
 1. [`docs/architecture-overview.md`](docs/architecture-overview.md)
 2. [`examples/karate-maru-response-examples-v0.2.md`](examples/karate-maru-response-examples-v0.2.md)
@@ -430,6 +474,12 @@ For practical use, start with the examples.
 For implementation, start with the YAML specification.
 
 For conceptual understanding, start with the architecture overview.
+
+For the v0.3 candidate extension, read:
+
+1. [`docs/yajirobe-control-layer.md`](docs/yajirobe-control-layer.md)
+2. [`docs/ma-ai-control.md`](docs/ma-ai-control.md)
+3. [`spec/center-of-gravity-detection-v0.3.yaml`](spec/center-of-gravity-detection-v0.3.yaml)
 
 ---
 
@@ -471,40 +521,260 @@ Not output volume, but distance and timing.
 
 ---
 
-## Status
+## v0.3 Candidate / Roadmap
 
-Current version: `v0.2`
+The v0.2.0 release defines the initial public protocol structure.
 
-Status: Draft
+The v0.3 candidate work extends Karate-Maru from a one-point response protocol into a more complete defensive control system.
 
-This repository defines the initial public structure of the Karate-Maru Defense Protocol.
+v0.3 focuses on three control layers:
 
-Future versions may include:
+```text
+Yajirobe Control = how much to respond.
+Ma-ai Control = when and from what distance to respond.
+Center-of-Gravity Detection = which point to strike.
+```
+
+Japanese:
+
+```text
+ヤジロベー制御 = どれだけ返すか。
+間合い制御 = いつ、どの距離から返すか。
+重心検知 = どの一点を突くか。
+```
+
+### v0.3 Candidate Components
+
+#### 1. Yajirobe Control Layer
+
+Document:
+
+* [`docs/yajirobe-control-layer.md`](docs/yajirobe-control-layer.md)
+
+Purpose:
+
+* prevent overreaction
+* prevent underreaction
+* determine response weight
+* restore balance with the minimum effective response
+
+Core principle:
+
+```text
+The optimal defensive response is the minimum response that restores balance.
+```
+
+Japanese:
+
+```text
+最適な防御応答とは、均衡を回復するための最小応答である。
+```
+
+#### 2. Ma-ai Control
+
+Document:
+
+* [`docs/ma-ai-control.md`](docs/ma-ai-control.md)
+
+Purpose:
+
+* control distance and timing
+* avoid premature response
+* avoid being pulled into the hostile frame
+* respond only after the center of gravity becomes visible
+
+Core principle:
+
+```text
+The safest response begins from outside the hostile frame.
+```
+
+Japanese:
+
+```text
+最も安全な応答は、敵対的な枠組みの外側から始まる。
+```
+
+#### 3. Center-of-Gravity Detection
+
+Specification:
+
+* [`spec/center-of-gravity-detection-v0.3.yaml`](spec/center-of-gravity-detection-v0.3.yaml)
+
+Purpose:
+
+* identify the single heaviest structural support point
+* choose the correct one-point counter
+* prevent over-analysis
+* keep the response defensive and minimal
+
+Core principle:
+
+```text
+Do not respond to the entire hostile output.
+Identify and remove the one support point that allows the output to function.
+```
+
+Japanese:
+
+```text
+敵対的出力の全文に反応しない。
+その出力を成立させている一点だけを見つけて外す。
+```
+
+### v0.3 Candidate Architecture
+
+```text
+Hostile / manipulative output
+        ↓
+Ma-ai Control
+Take distance before responding
+        ↓
+Layer Separation
+Separate intent, pressure, command, assumption, and safety claims
+        ↓
+Center-of-Gravity Detection
+Find the single heaviest support point
+        ↓
+Yajirobe Control
+Choose the minimum effective response weight
+        ↓
+One-Point Strike
+Remove the support point
+        ↓
+Stop Without Pursuit
+Do not escalate or over-explain
+```
+
+Japanese summary:
+
+```text
+間合いを取る。
+層を分ける。
+重心を見つける。
+応答量を決める。
+一点を突く。
+静かに引く。
+```
+
+### v0.3 Candidate Status
+
+The v0.3 materials are currently candidate-level extensions.
+
+They are included to document the planned direction of Karate-Maru beyond v0.2.0.
+
+They should be treated as experimental until promoted into a formal release.
+
+### Possible v0.3.0 Release Scope
+
+A future v0.3.0 release may include:
+
+* formal integration of Yajirobe Control
+* formal integration of Ma-ai Control
+* formal integration of Center-of-Gravity Detection
+* updated main protocol YAML
+* updated response examples
+* expanded validation examples
+* more explicit defensive evaluation checklist
+* optional JSON schema for detection outputs
+
+---
+
+## Future Directions
+
+Future versions may explore:
 
 * JSON schema
-* additional response examples
 * validation workflow
-* integration notes for GPTs
-* relationship to broader defensive reasoning protocols
+* GPTs integration notes
+* additional response examples
+* multilingual examples
+* psychological defense layer
 * relationship to Multi-Wing or distributed reasoning systems
+* formal evaluation checklist
+* safe benchmarking for defensive prompt analysis
+* integration with broader Yin-Yang Five-Phase Reasoning protocols
+
+---
+
+## Status
+
+Current stable version: `v0.2.0`
+
+Stable status: `Initial public release`
+
+Release date: `2026-05-30`
+
+Candidate extension: `v0.3`
+
+Candidate status: `Experimental / roadmap`
+
+This repository defines the initial public structure of the **Karate-Maru Defense Protocol** and documents the planned v0.3 control-layer expansion.
+
+The v0.2.0 release includes:
+
+* machine-readable YAML specification
+* practical response examples
+* architecture overview
+* Five-Phase reasoning relationship document
+* safety boundaries document
+* changelog
+* citation metadata
+* MIT license
+
+The v0.3 candidate materials include:
+
+* Yajirobe Control Layer
+* Ma-ai Control
+* Center-of-Gravity Detection
 
 ---
 
 ## License
 
-To be added.
+This project is released under the MIT License.
 
-Recommended: MIT License for open specification use.
+See [`LICENSE`](LICENSE).
 
 ---
 
 ## Citation
 
-Citation metadata may be added in a future `CITATION.cff`.
-
-Suggested title:
+If you use this specification, please cite:
 
 ```text
 Karate-Maru Defense Protocol: One-Point Strategic Defense for Adversarial AI Outputs
+Version 0.2.0
+SamuraiWriter7
+2026-05-30
 ```
+
+Citation metadata is available in [`CITATION.cff`](CITATION.cff).
+
+---
+
+## Final Principle
+
+```text
+Defense must not become offense.
+```
+
+```text
+Deflect into emptiness.
+Strike one point.
+Collapse the structure quietly.
+```
+
+Japanese:
+
+```text
+防御は、攻撃へ転じてはならない。
+```
+
+```text
+空へ流し、
+一点を突き、
+静かに崩す。
+```
+
 
